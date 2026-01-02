@@ -5,11 +5,14 @@ import contactsRouter from "./routes/contact.routes.js";
 const app = express()
 
 // cors configuration
-app.use(cors({
-    origin: process.env.CORS_ORIGIN?.split(",") || "http://localhost:5173",
-    methods: ["GET","POST","PUT","PATCH","DELETE"],
-    credentials: true
-}))
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+  })
+);
+
+app.options("*", cors());
 
 app.use(express.json());
 
