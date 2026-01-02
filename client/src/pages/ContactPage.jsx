@@ -9,7 +9,7 @@ const ContactPage = () => {
   const fetchContacts = async () => {
     console.log("first")
     const res = await axios.get(
-      `${import.meta.env.VITE_BACKEND_BASEURL}/get-contacts`
+      `${import.meta.env.VITE_BACKEND_BASEURL}/api/get-contacts`
     );
     console.log(res);
     setContacts(res.data);

@@ -25,7 +25,7 @@ const ContactForm = ({ setContacts }) => {
     setIsSubmitting(true);
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_BASEURL}/create-contact`,
+        `${import.meta.env.VITE_BACKEND_BASEURL}/api/create-contact`,
         form
       );
       setContacts((prev) => [response.data, ...prev]);

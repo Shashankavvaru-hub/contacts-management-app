@@ -4,7 +4,7 @@ const ContactsList = ({ contacts = [], setContacts }) => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `${import.meta.env.VITE_BACKEND_BASEURL}/delete-contact/${id}`
+        `${import.meta.env.VITE_BACKEND_BASEURL}/api/delete-contact/${id}`
       );
       setContacts((prev) => prev.filter((c) => c._id !== id));
     } catch (error) {
